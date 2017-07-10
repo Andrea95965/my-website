@@ -2,19 +2,226 @@
     <head> 
     <title>About Me</title>
     </head>
+    <style>
 
-    <body>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #4CAF50;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+</style>
+
+<body>
+
+<ul>
+  <li><a class="active" href="Untitled-3.html">Home</a></li>
+  <li><a href="/Untitled-4.html">My Hobbies</a></li>
+  <li><a href="/Untitled-5.html">My Favorite Subject</a></li>
+  <li><a href="/Untitled-6.html">After High School</a></li>
+    <li><a href="/Untitled-7.html">10 years</a></li>
+    <li><a href="../untitledfolder/Untitled-8.html">Night and Day Project</a></li>
+    <li><a href="../Phaser/index.html">My Lava Game</a></li>
+    <li><a href="../Adventure-game/Untitled-4.html">My Adventure Game</a></li>
+</ul>
+
+
+
+</body>
+<body>
         <h1 style = "color: purple; font-family: Arial; font-size:32">About Me</h1>
-        <h1 style = "color: lgiht blue; font-family: Arial; Font-size:32"> Backgrounf Info</h1>
+        <h1 style = "color: lgiht blue; font-family: Arial; Font-size:32"> Background Info</h1>
         <p>My full name is Andrea Karina Ramos Romero. I was born and raised in San Francisco. My mom was born in El Salvador and my dad was born in Mexico.
-            I was born on September 28,2002, so I'm currently 14 years old. I have two step sisters and one step brother. I am the youngest out of all of them. I have mostly grown up in the mission district until now that i have moved with my mom to the bayview district. I was raised by my mom and grandma. For elementary and middle school I atteneded Saint Peter's School. I was there for nine years. Now I'm currently a sophmore at Immaculate Conception Academy in the Mission District. Working is a major part of my school. For my first year at ICA, I was assigned to work at BART's main office in Oakland. It was an amazing experience, I met some amazing people that help me become who I am today.
-            <img src = "https://neitheryesterdays.files.wordpress.com/2016/01/the-group.jpg">
-            
-            <a href = "Untitled-4.html"> Second Page </a>
-    
-    
-    
-    
+            I was born on September 28,2002, so I'm currently 14 years old. I have two step sisters and one step brother. I am the youngest out of all of them. I have mostly grown up in the mission district until now that i have moved with my mom to the bayview district. I was raised by my mom and grandma. For elementary and middle school I atteneded Saint Peter's School. I was there for nine years. Now I'm currently a sophmore at Immaculate Conception Academy in the Mission District. Working is a major part of my school. For my first year at ICA, I was assigned to work at BART's main office in Oakland. It was an amazing experience andI met some amazing people that help me become who I am today.  
+
+
+<html>
+<head>
+<style>
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.9); 
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+
+.modal-content, #caption {    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+</style>
+</head>
+<body>
+
+
+<img id="myImg" src="https://neitheryesterdays.files.wordpress.com/2016/01/the-group.jpg" align="right" alt="St Peter's Class of 2016" width="300" height="200">
+
+
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+
+<script>
+
+var modal = document.getElementById('myModal');
+
+
+var img = document.getElementById('myImg');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+
+
+var span = document.getElementsByClassName("close")[0];
+
+
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+
+</body>
+</html>
+
+<img src="https://d1byvvo791gp2e.cloudfront.net/public/assets/media/images/000/715/769/images/size_220x220_ICASecondaryBlack.png?1485376626">
+
+<img src= "data:image/png;base64,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">
+  
+<html>
+<head>
+    <style>
+    <link rel= "stylesheet" href = "stylesheet.css"
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.previous {
+    background-color: #f1f1f1;
+    color: black;
+}
+
+.next {
+    background-color: #4CAF50;
+    color: white;
+}
+
+</style>
+</head>
+<body>
+
+
+
+
+<a href="Untitled-4.html" class="next">Next &raquo;</a>        
+
     
     
     
@@ -27,3 +234,4 @@
     
     
     </body>
+</html>
